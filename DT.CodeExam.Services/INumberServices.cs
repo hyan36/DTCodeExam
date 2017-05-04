@@ -26,6 +26,9 @@ namespace DT.CodeExam.Services
 
         [DataMember]
         public decimal Number { get; set; }
+
+        [DataMember]
+        public int DecimalPlaces { get; set; }
     }
 
     [DataContract]

@@ -23,6 +23,9 @@ namespace DT.CodeExam.Web.NumberServices {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DecimalPlacesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -35,6 +38,19 @@ namespace DT.CodeExam.Web.NumberServices {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DecimalPlaces {
+            get {
+                return this.DecimalPlacesField;
+            }
+            set {
+                if ((this.DecimalPlacesField.Equals(value) != true)) {
+                    this.DecimalPlacesField = value;
+                    this.RaisePropertyChanged("DecimalPlaces");
+                }
             }
         }
         

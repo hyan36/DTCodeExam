@@ -31,5 +31,21 @@ namespace DT.CodeExam.UnitTest
             Assert.AreEqual("Haihao Yan", response.Name);
             Assert.AreEqual("zero point zero one ", response.Number);
         }
+
+        [TestMethod]
+        public void TestNumber3decimalplacesConversion()
+        {
+            var client = new NumberServices.NumberServicesClient();
+
+            var response = client.Spell(new NumberServices.Request()
+            {
+                Name = "Haihao Yan",
+                Number = 0.01m,
+                DecimalPlaces = 5
+            });
+
+            Assert.AreEqual("Haihao Yan", response.Name);
+            Assert.AreEqual("zero point zero one zero zero zero ", response.Number);
+        }
     }
 }

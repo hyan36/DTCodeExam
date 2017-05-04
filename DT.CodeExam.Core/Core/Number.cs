@@ -27,8 +27,9 @@ namespace DT.CodeExam.Core.Core
         }
 
         public String _stringValue;
-        public string Spell(int digit = 100)
+        public string Spell(int places = 2)
         {
+            var digit = (int) Math.Pow(10, places);
             if (string.IsNullOrEmpty(_stringValue))
             {
                 var sb = new StringBuilder();

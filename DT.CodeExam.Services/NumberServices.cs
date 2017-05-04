@@ -19,7 +19,7 @@ namespace DT.CodeExam.Services
             var response = new Response();
             var number = new Number(request.Number);
             response.Name = request.Name;
-            response.Number = number.Spell();
+            response.Number = number.Spell(request.DecimalPlaces != 0 ? request.DecimalPlaces : 2);
             return response;
         }
     }
