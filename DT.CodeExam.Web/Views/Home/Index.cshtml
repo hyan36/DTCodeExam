@@ -1,0 +1,42 @@
+﻿@model DT.CodeExam.Web.Models.ExamModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET MVC</h1>
+    
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <p class="lead">Input</p>
+        <p>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>@Html.TextBoxFor(m => m.Name)</td>
+                </tr>
+                <tr>
+                    <td>Number:</td>
+                    <td>@Html.TextBoxFor(m => m.Number)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>            
+        </p>
+
+        if(Model != null)
+        {
+            <p class="lead">Output</p>
+            <p>
+                <ul>
+                    <li>@Model.Name</li>
+                    <li>@Model.NumberString</li>
+                </ul>
+            </p>
+        }
+    }
+</div>
+
